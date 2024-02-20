@@ -1,0 +1,91 @@
+const baseUrlv4 = "http://localhost:3002";
+const baseUrlv5 = "http://localhost:8080";
+
+const baseUrl = baseUrlv5;
+
+const urls = [
+  "/full-page-examples/announcements",
+  "/full-page-examples/applicant-details",
+  "/full-page-examples/bank-holidays",
+  "/full-page-examples/campaign-page",
+  "/full-page-examples/check-your-answers",
+  "/full-page-examples/child-maintenance",
+  "/full-page-examples/confirm-delete",
+  "/full-page-examples/cookie-banner-client-side",
+  "/full-page-examples/cookie-banner-essential-cookies",
+  "/full-page-examples/cookie-banner-server-side",
+  "/full-page-examples/feedback",
+  "/full-page-examples/have-you-changed-your-name",
+  "/full-page-examples/how-do-you-want-to-sign-in",
+  "/full-page-examples/passport-details",
+  "/full-page-examples/renew-driving-licence",
+  "/full-page-examples/search",
+  "/full-page-examples/start-page",
+  "/full-page-examples/service-manual-topic",
+  "/full-page-examples/update-your-account-details",
+  "/full-page-examples/upload-your-photo",
+  "/full-page-examples/upload-your-photo-success",
+  "/full-page-examples/what-is-your-address",
+  "/full-page-examples/what-is-your-nationality",
+  "/full-page-examples/what-is-your-postcode",
+  "/full-page-examples/what-was-the-last-country-you-visited",
+  "/full-page-examples/work-history",
+];
+
+module.exports = {
+  id: "backstop_default",
+  viewports: [
+    {
+      label: "phone",
+      width: 320,
+      height: 480,
+    },
+    {
+      label: "tablet",
+      width: 768,
+      height: 1024,
+    },
+    {
+      label: "desktop",
+      width: 1024,
+      height: 768,
+    },
+  ],
+  onBeforeScript: "puppet/onBefore.js",
+  onReadyScript: "puppet/onReady.js",
+  scenarios: urls.map((url) => ({
+    label: url,
+    cookiePath: "backstop_data/engine_scripts/cookies.json",
+    url: `${baseUrl}${url}`,
+    referenceUrl: "",
+    readyEvent: "",
+    readySelector: "",
+    delay: 0,
+    hideSelectors: [],
+    removeSelectors: [],
+    hoverSelector: "",
+    clickSelector: "",
+    postInteractionWait: 0,
+    selectors: [],
+    selectorExpansion: true,
+    expect: 0,
+    misMatchThreshold: 0.1,
+    requireSameDimensions: true,
+  })),
+  paths: {
+    bitmaps_reference: "backstop_data/bitmaps_reference",
+    bitmaps_test: "backstop_data/bitmaps_test",
+    engine_scripts: "backstop_data/engine_scripts",
+    html_report: "backstop_data/html_report",
+    ci_report: "backstop_data/ci_report",
+  },
+  report: ["browser"],
+  engine: "puppeteer",
+  engineOptions: {
+    args: ["--no-sandbox"],
+  },
+  asyncCaptureLimit: 5,
+  asyncCompareLimit: 50,
+  debug: false,
+  debugWindow: false,
+};

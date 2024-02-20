@@ -1,0 +1,42 @@
+{
+  "testSuite": "BackstopJS",
+  "tests": [
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/backstop_default_BackstopJS_Homepage_0__0_phone.png",
+        "test": "../bitmaps_test/20240220-145314/backstop_default_BackstopJS_Homepage_0__0_phone.png",
+        "selector": "",
+        "fileName": "backstop_default_BackstopJS_Homepage_0__0_phone.png",
+        "label": "BackstopJS Homepage",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://localhost:3002/full-page-examples/announcements",
+        "referenceUrl": "",
+        "expect": 0,
+        "viewportLabel": "phone",
+        "engineErrorMsg": "net::ERR_SSL_PROTOCOL_ERROR at https://localhost:3002/full-page-examples/announcements",
+        "error": "Reference file not found /Users/nheal/dev/proto/visdiff/backstop_data/bitmaps_reference/backstop_default_BackstopJS_Homepage_0__0_phone.png"
+      },
+      "status": "fail"
+    },
+    {
+      "pair": {
+        "reference": "../bitmaps_reference/backstop_default_BackstopJS_Homepage_0__1_tablet.png",
+        "test": "../bitmaps_test/20240220-145314/backstop_default_BackstopJS_Homepage_0__1_tablet.png",
+        "selector": "",
+        "fileName": "backstop_default_BackstopJS_Homepage_0__1_tablet.png",
+        "label": "BackstopJS Homepage",
+        "requireSameDimensions": true,
+        "misMatchThreshold": 0.1,
+        "url": "https://localhost:3002/full-page-examples/announcements",
+        "referenceUrl": "",
+        "expect": 0,
+        "viewportLabel": "tablet",
+        "engineErrorMsg": "net::ERR_SSL_PROTOCOL_ERROR at https://localhost:3002/full-page-examples/announcements",
+        "error": "Reference file not found /Users/nheal/dev/proto/visdiff/backstop_data/bitmaps_reference/backstop_default_BackstopJS_Homepage_0__1_tablet.png"
+      },
+      "status": "fail"
+    }
+  ],
+  "id": "backstop_default"
+}
